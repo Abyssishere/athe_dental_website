@@ -1,40 +1,102 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Practice</title>
-    <link rel="stylesheet" href="stylee.css"> <!-- Link to the external CSS file -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Warning for Paul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    * {
+      cursor: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: 'Creepster', cursive;
+      color: white;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      animation: flickerBg 5s infinite alternate;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+    }
+
+    .container img {
+      max-width: 90vw;
+      max-height: 90vh;
+      opacity: 0.6;
+      filter: grayscale(100%) contrast(150%) brightness(60%);
+      border: 5px solid crimson;
+      box-shadow: 0 0 50px crimson;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4vw;
+      color: crimson;
+      text-shadow: 0 0 20px red, 0 0 40px black;
+      animation: pulse 1.5s infinite, glitch 0.3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.05); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.7; }
+      50% { opacity: 0.5; }
+      100% { opacity: 0.8; }
+    }
+
+    @keyframes flickerBg {
+      0% { background-color: black; }
+      100% { background-color: #0a0a0a; }
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(-50%, -50%) skew(0deg); }
+      20% { transform: translate(-48%, -52%) skew(5deg); }
+      40% { transform: translate(-52%, -48%) skew(-5deg); }
+      60% { transform: translate(-50%, -50%) skew(0deg); }
+      100% { transform: translate(-50%, -50%) skew(1deg); }
+    }
+
+    /* Optional: Flashing background text or symbols */
+    .symbols {
+      position: absolute;
+      font-size: 10vw;
+      color: rgba(255, 0, 0, 0.05);
+      top: 10%;
+      left: 5%;
+      animation: fadeText 3s infinite alternate;
+    }
+
+    @keyframes fadeText {
+      0% { opacity: 0.05; transform: rotate(0deg); }
+      100% { opacity: 0.15; transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact1.html">Contact</a></li>
-            <li><a href="appointments.html">Appointments</a></li>
-            <li><a href="staff.html">Staff Area</a></li>
-        </ul>
-    </nav>
-   
-    <!-- Home Page Content -->
-    <section id="home">
-        <h1>Welcome</h1>
-        <p><b>Your smile is our priority. </b></p>
-        <img src="healthy.jpg" alt="Dental Practice Image"> <!-- Example media content -->
-    </section>
-</section>
-
-  
-<li><a href="privacy.html">Privacy Policy</a></li>
-<li><a href="terms.html">Terms & Conditions</a></li>
-</ul>
-</div>
-
-    <!-- Placeholder for additional pages -->
-    
-   
+  <div class="symbols">☠ ☠ ☠</div>
+  <div class="container">
+    <img src="PFP.jpg" alt="Spooky Paul" />
+    <div class="overlay-text">Text before it's too late, Paul</div>
+  </div>
 </body>
-</html> 
+</html>
